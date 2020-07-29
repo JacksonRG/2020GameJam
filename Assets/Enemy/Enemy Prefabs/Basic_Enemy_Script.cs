@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Basic_Enemy_Script : MonoBehaviour
 {
-    public float health = 5f;
+    public float health = 50000f;
     public Vector3 birthscale;
     public bool visible = true;
     public bool blinking = false;
@@ -66,6 +66,7 @@ public class Basic_Enemy_Script : MonoBehaviour
             visible = true;
         }
         
+
 
     }
 }
