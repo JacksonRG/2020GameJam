@@ -650,7 +650,9 @@ Transform:
   m_LocalScale: {x: 89.44057, y: 54.320717, z: 0.6733995}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 3
+=======
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1198040914
@@ -1265,6 +1267,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 577535111}
   m_RootOrder: 4
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1634071131 stripped
 Transform:

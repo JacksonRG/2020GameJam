@@ -10,6 +10,7 @@ public class knight_script : MonoBehaviour
     public float moveSpeed = .5f;
     public float step = 0.1f;
     public float health = 10f;
+    public float maxHealth = 10f;
     public float damage = 2f;
     public Rigidbody2D rb;
     Vector2 target_transform;
@@ -24,6 +25,7 @@ public class knight_script : MonoBehaviour
     public float attack_cooldown=0;
     public float default_cooldown = 3f;
     public LayerMask enemy_layer;
+    public HealthBar healthBar;
     
 
 
@@ -73,6 +75,7 @@ public class knight_script : MonoBehaviour
     public void take_damage(float damage)
     {
         health = health - damage;
+		healthBar.SetHealth(health/maxHealth);
         if (health <= 0)
         {
             //knight_dead

@@ -6,12 +6,15 @@ using UnityEngine;
 public class player_movement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float maxHealth = 3f;
     public float health = 3f;
     public Rigidbody2D rb;
     Vector2 movement;
     public Animator animator;
+    public HealthBar healthBar;
 
     //public HealthBarPlayer hbPlayer;
+    //Dictionary<string, Func> spellEffects;
 
     public class Spell
     {
@@ -30,8 +33,10 @@ public class player_movement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        /*if (Input.GetKeyDown("K")){
-            hbPlayer.SetHealth(0.5f);
+		//Testing that the healthbar updates
+        /*if (Input.GetKeyUp("k")){
+			health -= .2f;
+			healthBar.SetHealth(health/maxHealth);
         }*/
     }
 
