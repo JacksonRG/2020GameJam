@@ -10,6 +10,19 @@ public class player_movement : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movement;
     public Animator animator;
+
+    //Dictionary<string, Func> spellEffects;
+
+
+    public class Spell
+    {
+        int ID;
+        string name;
+        string msg; //TODO: Display this on cast (if we choose)
+        //Func effect;
+    };
+
+    //Spell heal1
   
 
     // Update is called once per frame
@@ -20,7 +33,9 @@ public class player_movement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-
+        if(Input.GetKeyDown("K")){
+            SetHealth(0.5f);
+        }
     }
 
     void FixedUpdate()
