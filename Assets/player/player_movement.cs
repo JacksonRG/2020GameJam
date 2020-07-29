@@ -12,7 +12,7 @@ public class player_movement : MonoBehaviour
     public Animator animator;
 
     //Dictionary<string, Func> spellEffects;
-    public HealthBarPlayer hbPlayer;
+    //public HealthBarPlayer hbPlayer;
 
     public class Spell
     {
@@ -32,9 +32,9 @@ public class player_movement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        if (Input.GetKeyDown("K")){
+        /*if (Input.GetKeyDown("K")){
             hbPlayer.SetHealth(0.5f);
-        }
+        }*/
     }
 
     void FixedUpdate()
