@@ -48,10 +48,9 @@ public class Basic_Enemy_Script : MonoBehaviour
         if (!visible)
         {
             blink();
+            blinking = false;
         }
     }
-
-
 
     void blink()
     {
@@ -65,8 +64,5 @@ public class Basic_Enemy_Script : MonoBehaviour
             gameObject.transform.localScale = birthscale;
             visible = true;
         }
-        
-
-
     }
 }
