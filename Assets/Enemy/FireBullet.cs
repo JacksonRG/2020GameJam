@@ -8,13 +8,13 @@ using UnityEngine;
 public class FireBullet : MonoBehaviour
 {
     [SerializeField]
-    private int bulletsAmount = 10;
+    private int bulletsAmount;
 
     [SerializeField]
-    private float startAngle = 0f, endAngle = 360f;
+    private float startAngle, endAngle;
 
     [SerializeField]
-    private float fire_frequency = 4f;
+    private float fire_frequency;
 
     private Vector2 BulletMoveDirection;
 
@@ -40,6 +40,7 @@ public class FireBullet : MonoBehaviour
             Vector2 bulDir = (bulMoveVector - transform.position).normalized;
 
             GameObject bul = BulletPool.bulletPoolInstance.GetBullet();
+            bul.transform.localScale = new Vector3(1, 1, 1);
             bul.transform.position = transform.position;
             bul.transform.rotation = transform.rotation;
             bul.SetActive(true);

@@ -63,11 +63,15 @@ public class Bullet : MonoBehaviour
         {
             case "Knight":
                 knight_s.take_damage(damage);
-                Destroy(gameObject);
+                Destroy();
                 break;
             case "Player":
                 player_s.take_damage(damage);
-                Destroy(gameObject);
+                Destroy();
+                break;
+            case "Block":
+
+                Destroy();
                 break;
             default:
                 break;

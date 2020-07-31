@@ -49,6 +49,7 @@ public class player_movement : MonoBehaviour
     public void take_damage(float damage)
     {
         health = health - damage;
+        healthBar.SetHealth(health / maxHealth);
         if (health <= 0)
         {
             //player dead
