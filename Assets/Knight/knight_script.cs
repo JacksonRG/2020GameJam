@@ -26,6 +26,7 @@ public class knight_script : MonoBehaviour
     public HealthBar healthBar;
     public GameObject exit;
     public LayerMask exit_layer;
+    public LevelLoader level_loader;
     //Enemy Interaction
     public Basic_Enemy_Script benemy_s;//script of enemy that is being hit. Used to call take damage.
     public LayerMask enemy_layer;//Establishes the enemy layer. Used in striking hitbox to determine if anyone is hit.
@@ -58,15 +59,15 @@ public class knight_script : MonoBehaviour
             target_enemy = exit;
         }
         seeker.StartPath(rb.position, target_enemy.transform.position, OnPathComplete);
-        if (currentWaypoint >= path.vectorPath.Count)
-        {
-            reachedEndOfPath = true;
-        }
-        else
-        {
-            reachedEndOfPath = false;
-        }
-        if ((knight_movable) && (!reachedEndOfPath))
+        //if ((currentWaypoint >= path.vectorPath.Count) && (target_enemy == exit))
+        //{
+        //    reachedEndOfPath = true;
+        //}
+        //else
+        //{
+        //    reachedEndOfPath = false;
+        //}
+        if (knight_movable)
         {
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             move_knight(direction);
@@ -131,6 +132,7 @@ public class knight_script : MonoBehaviour
         if((exit_hit != null) && (enemy_list.Length==0))
         {
             Debug.Log("I Am going to transition now.");
+            level_loader.LoadNextLevel();
             //Transition to next scene.
         }
     }
