@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-	private GameObject inventory;
-	public GameObject item;
+	private Inventory inventory;
+	public Item item;
 
     void Start()
     {
@@ -14,13 +14,13 @@ public class Pickup : MonoBehaviour
 
 	void OnTriggerEntered2D(Collider2D other){
 		if (other.CompareTag("Player")){
-			for (int i = 0; i < inventory.slots.size; i++){
+			for (int i = 0; i < inventory.slots.Length; i++){
 				//add item
-				if (inventory.quantity[i] != 0 && inventory.slots[i] != itemTag){
+				if (inventory.quantity[i] != 0 && inventory.slots[i].type != item.type){
 					continue;
 				}
 				if (inventory.quantity[i] < item.maxNumber){
-					inventory.addItem(i, itemTag);
+					inventory.addItem(i, item);
 					Destroy(gameObject);
 					break;
 				}

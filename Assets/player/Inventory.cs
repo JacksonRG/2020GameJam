@@ -7,18 +7,22 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
 	//public GameObject itemBar;
-	public GameObject[] slots;
-	private int[] quantity;
+	public Item[] slots;
+	public int[] quantity;
 	
     // Start is called before the first frame update
     void Start()
     {
-		for (int i = 0; i < numSlots; i++){
+		for (int i = 0; i < slots.Length; i++){
 			quantity[i] = 0;
 		}
     }
 
-	void addItem(int slotNum, GameObject item){
+	void Update(){
+		//read input 1234
+	}
+
+	public void addItem(int i, Item item){
 		if (quantity[i] >= item.maxNumber){
 			return;
 		}
@@ -26,8 +30,8 @@ public class Inventory : MonoBehaviour
 		quantity[i] += 1;
 	}
 
-	void useItem(int i){
-		if (quantity <= 0){
+	public void useItem(int i){
+		if (quantity[i] <= 0){
 			return;
 		}
 		slots[i].cast();
@@ -35,7 +39,7 @@ public class Inventory : MonoBehaviour
 			quantity[i] -=1;
 		}
 		else{
-			quantity = 0;
+			quantity[i] = 0;
 			Destroy(slots[i]);
 		}
 	}	
