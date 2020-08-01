@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-	private Inventory inventory;
+	private GameObject inventory;
 	public GameObject item;
 
     void Start()
